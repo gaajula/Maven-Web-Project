@@ -8,8 +8,8 @@ node {
 	    stage('envset'){
 	     withEnv([
             "devopsName='Jenkins DevOps'",
-            'emailTo=devopstrainingblr@gmail.com',
-            'emailFrom=devopstrainingblr@gmail.com'
+            'emailTo=mail2sekhar.pasupula@gmail.com',
+            'emailFrom=mail9sekhar@gmail.com'
 	    ])
 	    }
        stage('Checkout'){
@@ -19,12 +19,12 @@ node {
 
        stage('Compiling'){
 
-          sh 'mvn deploy'
+          cmd 'mvn deploy'
        }
 	   
       stage('Sonar') {
                     //add stage sonar
-                    sh 'mvn sonar:sonar'
+                    cmd 'mvn sonar:sonar'
                 }
        stage('mail'){
 
